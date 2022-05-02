@@ -13,15 +13,15 @@ date <- date()
 
 This document was generated on \Sexpr{date}.
 
-As shown in Figure \ref{fig:myfig} and in Table \ref{tab:rtab1} we can see that bla bla \citep{B}.
+As shown in Figure \ref{fig:mummer} and in Table \ref{tab:rtab1} we can see that bla bla \citep{B}.
 
 
 <<results = 'asis', eval = TRUE>>=
 what <- "figure"
-figname <- "myfig"
-title <- "Some random figure"
+figname <- "mummer"
+title <- "Mummer between stuff"
 desc <- "{\\bf (a)} blah first point {\\bf (b)} blah second point {\\bf (c)} blaih thrid panel "
-shortname <- "fig:myfig"
+shortname <- "fig:mummer"
 where <- "[!ht]"
 
 figstr <- paste0('\\begin{', what ,'}', where ,'

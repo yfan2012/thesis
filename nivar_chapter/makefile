@@ -1,4 +1,4 @@
-name=rnw_chapter
+name=nivar_chapter
 ${name}.tex: ${name}.Rnw
 	if [ -e ${name}.aux ]; \
 	then \
