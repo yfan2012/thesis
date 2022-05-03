@@ -1,5 +1,5 @@
 \chapter{Genome assembly of Candida nivariensis}
-\label{chap:rnw}
+\label{chap:nivar}
 
 <<label=opts, results='hide', echo=FALSE, message = FALSE, warning=FALSE>>=
 library(knitr)
