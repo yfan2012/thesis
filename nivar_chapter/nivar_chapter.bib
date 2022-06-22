@@ -84,6 +84,46 @@
   language = "en"
 }
 
+@ARTICLE{Koren2017-wf,
+  title    = "Canu: scalable and accurate long-read assembly via adaptive k-mer
+              weighting and repeat separation",
+  author   = "Koren, Sergey and Walenz, Brian P and Berlin, Konstantin and
+              Miller, Jason R and Bergman, Nicholas H and Phillippy, Adam M",
+  abstract = "Long-read single-molecule sequencing has revolutionized de novo
+              genome assembly and enabled the automated reconstruction of
+              reference-quality genomes. However, given the relatively high
+              error rates of such technologies, efficient and accurate assembly
+              of large repeats and closely related haplotypes remains
+              challenging. We address these issues with Canu, a successor of
+              Celera Assembler that is specifically designed for noisy
+              single-molecule sequences. Canu introduces support for nanopore
+              sequencing, halves depth-of-coverage requirements, and improves
+              assembly continuity while simultaneously reducing runtime by an
+              order of magnitude on large genomes versus Celera Assembler 8.2.
+              These advances result from new overlapping and assembly
+              algorithms, including an adaptive overlapping strategy based on
+              tf-idf weighted MinHash and a sparse assembly graph construction
+              that avoids collapsing diverged repeats and haplotypes. We
+              demonstrate that Canu can reliably assemble complete microbial
+              genomes and near-complete eukaryotic chromosomes using either
+              Pacific Biosciences (PacBio) or Oxford Nanopore technologies and
+              achieves a contig NG50 of >21 Mbp on both human and Drosophila
+              melanogaster PacBio data sets. For assembly structures that
+              cannot be linearly represented, Canu provides graph-based
+              assembly outputs in graphical fragment assembly (GFA) format for
+              analysis or integration with complementary phasing and
+              scaffolding techniques. The combination of such highly resolved
+              assembly graphs with long-range scaffolding information promises
+              the complete and automated assembly of complex genomes.",
+  journal  = "Genome Res.",
+  volume   =  27,
+  number   =  5,
+  pages    = "722--736",
+  month    =  may,
+  year     =  2017,
+  language = "en"
+}
+
 @ARTICLE{Garrison2012-iq,
   title         = "Haplotype-based variant detection from short-read sequencing",
   author        = "Garrison, Erik and Marth, Gabor",
@@ -1084,6 +1124,34 @@
   month    =  feb,
   year     =  2005,
   language = "en"
+
+}
+
+@ARTICLE{Simao2015-zz,
+  title    = "{BUSCO}: assessing genome assembly and annotation completeness
+              with single-copy orthologs",
+  author   = "Sim{\~a}o, Felipe A and Waterhouse, Robert M and Ioannidis,
+              Panagiotis and Kriventseva, Evgenia V and Zdobnov, Evgeny M",
+  abstract = "MOTIVATION: Genomics has revolutionized biological research, but
+              quality assessment of the resulting assembled sequences is
+              complicated and remains mostly limited to technical measures like
+              N50. RESULTS: We propose a measure for quantitative assessment of
+              genome assembly and annotation completeness based on
+              evolutionarily informed expectations of gene content. We
+              implemented the assessment procedure in open-source software,
+              with sets of Benchmarking Universal Single-Copy Orthologs, named
+              BUSCO. AVAILABILITY AND IMPLEMENTATION: Software implemented in
+              Python and datasets available for download from
+              http://busco.ezlab.org. CONTACT: evgeny.zdobnov@unige.ch
+              SUPPLEMENTARY INFORMATION: Supplementary data are available at
+              Bioinformatics online.",
+  journal  = "Bioinformatics",
+  volume   =  31,
+  number   =  19,
+  pages    = "3210--3212",
+  month    =  oct,
+  year     =  2015,
+  language = "en"
 }
 
 @ARTICLE{Todd2019-sy,
@@ -1136,5 +1204,253 @@
   pages    = "92",
   month    =  may,
   year     =  2019,
+  language = "en"
+}
+
+@ARTICLE{Marcais2018-mm,
+  title    = "{MUMmer4}: A fast and versatile genome alignment system",
+  author   = "Mar{\c c}ais, Guillaume and Delcher, Arthur L and Phillippy, Adam
+              M and Coston, Rachel and Salzberg, Steven L and Zimin, Aleksey",
+  abstract = "The MUMmer system and the genome sequence aligner nucmer included
+              within it are among the most widely used alignment packages in
+              genomics. Since the last major release of MUMmer version 3 in
+              2004, it has been applied to many types of problems including
+              aligning whole genome sequences, aligning reads to a reference
+              genome, and comparing different assemblies of the same genome.
+              Despite its broad utility, MUMmer3 has limitations that can make
+              it difficult to use for large genomes and for the very large
+              sequence data sets that are common today. In this paper we
+              describe MUMmer4, a substantially improved version of MUMmer that
+              addresses genome size constraints by changing the 32-bit suffix
+              tree data structure at the core of MUMmer to a 48-bit suffix
+              array, and that offers improved speed through parallel processing
+              of input query sequences. With a theoretical limit on the input
+              size of 141Tbp, MUMmer4 can now work with input sequences of any
+              biologically realistic length. We show that as a result of these
+              enhancements, the nucmer program in MUMmer4 is easily able to
+              handle alignments of large genomes; we illustrate this with an
+              alignment of the human and chimpanzee genomes, which allows us to
+              compute that the two species are 98\% identical across 96\% of
+              their length. With the enhancements described here, MUMmer4 can
+              also be used to efficiently align reads to reference genomes,
+              although it is less sensitive and accurate than the dedicated
+              read aligners. The nucmer aligner in MUMmer4 can now be called
+              from scripting languages such as Perl, Python and Ruby. These
+              improvements make MUMer4 one the most versatile genome alignment
+              packages available.",
+  journal  = "PLoS Comput. Biol.",
+  volume   =  14,
+  number   =  1,
+  pages    = "e1005944",
+  month    =  jan,
+  year     =  2018,
+  language = "en"
+}
+
+@ARTICLE{Benson1999-lr,
+  title    = "Tandem repeats finder: a program to analyze {DNA} sequences",
+  author   = "Benson, G",
+  abstract = "A tandem repeat in DNA is two or more contiguous, approximate
+              copies of a pattern of nucleotides. Tandem repeats have been
+              shown to cause human disease, may play a variety of regulatory
+              and evolutionary roles and are important laboratory and analytic
+              tools. Extensive knowledge about pattern size, copy number,
+              mutational history, etc. for tandem repeats has been limited by
+              the inability to easily detect them in genomic sequence data. In
+              this paper, we present a new algorithm for finding tandem repeats
+              which works without the need to specify either the pattern or
+              pattern size. We model tandem repeats by percent identity and
+              frequency of indels between adjacent pattern copies and use
+              statistically based recognition criteria. We demonstrate the
+              algorithm's speed and its ability to detect tandem repeats that
+              have undergone extensive mutational change by analyzing four
+              sequences: the human frataxin gene, the human beta T cellreceptor
+              locus sequence and two yeast chromosomes. These sequences range
+              in size from 3 kb up to 700 kb. A World Wide Web server interface
+              atc3.biomath.mssm.edu/trf.html has been established for automated
+              use of the program.",
+  journal  = "Nucleic Acids Res.",
+  volume   =  27,
+  number   =  2,
+  pages    = "573--580",
+  month    =  jan,
+  year     =  1999,
+  language = "en"
+}
+
+@ARTICLE{Kovaka2019-lg,
+  title    = "Transcriptome assembly from long-read {RNA-seq} alignments with
+              {StringTie2}",
+  author   = "Kovaka, Sam and Zimin, Aleksey V and Pertea, Geo M and Razaghi,
+              Roham and Salzberg, Steven L and Pertea, Mihaela",
+  abstract = "RNA sequencing using the latest single-molecule sequencing
+              instruments produces reads that are thousands of nucleotides
+              long. The ability to assemble these long reads can greatly
+              improve the sensitivity of long-read analyses. Here we present
+              StringTie2, a reference-guided transcriptome assembler that works
+              with both short and long reads. StringTie2 includes new methods
+              to handle the high error rate of long reads and offers the
+              ability to work with full-length super-reads assembled from short
+              reads, which further improves the quality of short-read
+              assemblies. StringTie2 is more accurate and faster and uses less
+              memory than all comparable short-read and long-read analysis
+              tools.",
+  journal  = "Genome Biol.",
+  volume   =  20,
+  number   =  1,
+  pages    = "278",
+  month    =  dec,
+  year     =  2019,
+  keywords = "Gene expression; Long-read sequencing; RNA-seq; Transcriptome
+              assembly",
+  language = "en"
+}
+
+@ARTICLE{Li2013-ec,
+  title         = "Aligning sequence reads, clone sequences and assembly
+                   contigs with {BWA-MEM}",
+  author        = "Li, Heng",
+  abstract      = "Summary: BWA-MEM is a new alignment algorithm for aligning
+                   sequence reads or long query sequences against a large
+                   reference genome such as human. It automatically chooses
+                   between local and end-to-end alignments, supports paired-end
+                   reads and performs chimeric alignment. The algorithm is
+                   robust to sequencing errors and applicable to a wide range
+                   of sequence lengths from 70bp to a few megabases. For
+                   mapping 100bp sequences, BWA-MEM shows better performance
+                   than several state-of-art read aligners to date.
+                   Availability and implementation: BWA-MEM is implemented as a
+                   component of BWA, which is available at
+                   http://github.com/lh3/bwa. Contact:
+                   hengli@broadinstitute.org",
+  month         =  mar,
+  year          =  2013,
+  archivePrefix = "arXiv",
+  primaryClass  = "q-bio.GN",
+  eprint        = "1303.3997"
+}
+
+@UNPUBLISHED{Shumate2020-fo,
+  title    = "Liftoff: an accurate gene annotation mapping tool",
+  author   = "Shumate, Alaina and Salzberg, Steven L",
+  abstract = "Improvements in DNA sequencing technology and computational
+              methods have led to a substantial increase in the creation of
+              high-quality genome assemblies of many species. To understand the
+              biology of these genomes, annotation of gene features and other
+              functional elements is essential; however for most species, only
+              the reference genome is well-annotated. One strategy to annotate
+              new or improved genome assemblies is to map or `lift over' the
+              genes from a previously-annotated reference genome. Here we
+              describe Liftoff, a new genome annotation lift-over tool capable
+              of mapping genes between two assemblies of the same or
+              closely-related species. Liftoff aligns genes from a reference
+              genome to a target genome and finds the mapping that maximizes
+              sequence identity while preserving the structure of each exon,
+              transcript, and gene. We show that Liftoff can accurately map
+              99.9\% of genes between two versions of the human reference
+              genome with an average sequence identity >99.9\%. We also show
+              that Liftoff can map genes across species by successfully lifting
+              over 98.4\% of human protein-coding genes to a chimpanzee genome
+              assembly with 98.7\% sequence identity. Availability The source
+              code for Liftoff is available at \#\#\# Competing Interest
+              Statement The authors have declared no competing interest.",
+  journal  = "Cold Spring Harbor Laboratory",
+  pages    = "2020.06.24.169680",
+  month    =  jun,
+  year     =  2020,
+  language = "en"
+}
+
+@ARTICLE{Hoff2019-rd,
+  title    = "{Whole-Genome} Annotation with {BRAKER}",
+  author   = "Hoff, Katharina J and Lomsadze, Alexandre and Borodovsky, Mark
+              and Stanke, Mario",
+  abstract = "BRAKER is a pipeline for highly accurate and fully automated gene
+              prediction in novel eukaryotic genomes. It combines two major
+              tools: GeneMark-ES/ET and AUGUSTUS. GeneMark-ES/ET learns its
+              parameters from a novel genomic sequence in a fully automated
+              fashion; if available, it uses extrinsic evidence for model
+              refinement. From the protein-coding genes predicted by
+              GeneMark-ES/ET, we select a set for training AUGUSTUS, one of the
+              most accurate gene finding tools that, in contrast to
+              GeneMark-ES/ET, integrates extrinsic evidence already into the
+              gene prediction step. The first published version, BRAKER1,
+              integrated genomic footprints of unassembled RNA-Seq reads into
+              the training as well as into the prediction steps. The pipeline
+              has since been extended to the integration of data on mapped
+              cross-species proteins, and to the usage of heterogeneous
+              extrinsic evidence, both RNA-Seq and protein alignments. In this
+              book chapter, we briefly summarize the pipeline methodology and
+              describe how to apply BRAKER in environments characterized by
+              various combinations of external evidence.",
+  journal  = "Methods Mol. Biol.",
+  volume   =  1962,
+  pages    = "65--95",
+  year     =  2019,
+  keywords = "AUGUSTUS; BRAKER; Gene prediction; GeneMark-ES/ET; Genome
+              annotation pipeline; Protein mapping to genome; Protein-coding
+              genes; RNA-Seq reads",
+  language = "en"
+}
+
+@ARTICLE{Bolger2014-ax,
+  title    = "Trimmomatic: a flexible trimmer for Illumina sequence data",
+  author   = "Bolger, Anthony M and Lohse, Marc and Usadel, Bjoern",
+  abstract = "MOTIVATION: Although many next-generation sequencing (NGS) read
+              preprocessing tools already existed, we could not find any tool
+              or combination of tools that met our requirements in terms of
+              flexibility, correct handling of paired-end data and high
+              performance. We have developed Trimmomatic as a more flexible and
+              efficient preprocessing tool, which could correctly handle
+              paired-end data. RESULTS: The value of NGS read preprocessing is
+              demonstrated for both reference-based and reference-free tasks.
+              Trimmomatic is shown to produce output that is at least
+              competitive with, and in many cases superior to, that produced by
+              other tools, in all scenarios tested. AVAILABILITY AND
+              IMPLEMENTATION: Trimmomatic is licensed under GPL V3. It is
+              cross-platform (Java 1.5+ required) and available at
+              http://www.usadellab.org/cms/index.php?page=trimmomatic CONTACT:
+              usadel@bio1.rwth-aachen.de SUPPLEMENTARY INFORMATION:
+              Supplementary data are available at Bioinformatics online.",
+  journal  = "Bioinformatics",
+  volume   =  30,
+  number   =  15,
+  pages    = "2114--2120",
+  month    =  aug,
+  year     =  2014,
+  language = "en"
+}
+
+% The entry below contains non-ASCII chars that could not be converted
+% to a LaTeX equivalent.
+@ARTICLE{Li2018-eq,
+  title    = "Minimap2: pairwise alignment for nucleotide sequences",
+  author   = "Li, Heng",
+  abstract = "Motivation: Recent advances in sequencing technologies promise
+              ultra-long reads of ∼100 kb in average, full-length mRNA or cDNA
+              reads in high throughput and genomic contigs over 100 Mb in
+              length. Existing alignment programs are unable or inefficient to
+              process such data at scale, which presses for the development of
+              new alignment algorithms. Results: Minimap2 is a general-purpose
+              alignment program to map DNA or long mRNA sequences against a
+              large reference database. It works with accurate short reads of
+              $\geq$100 bp in length, $\geq$1 kb genomic reads at error rate
+              ∼15\%, full-length noisy Direct RNA or cDNA reads and assembly
+              contigs or closely related full chromosomes of hundreds of
+              megabases in length. Minimap2 does split-read alignment, employs
+              concave gap cost for long insertions and deletions and introduces
+              new heuristics to reduce spurious alignments. It is 3-4 times as
+              fast as mainstream short-read mappers at comparable accuracy, and
+              is $\geq$30 times faster than long-read genomic or cDNA mappers
+              at higher accuracy, surpassing most aligners specialized in one
+              type of alignment. Availability and implementation:
+              https://github.com/lh3/minimap2. Supplementary information:
+              Supplementary data are available at Bioinformatics online.",
+  journal  = "Bioinformatics",
+  volume   =  34,
+  number   =  18,
+  pages    = "3094--3100",
+  month    =  sep,
+  year     =  2018,
   language = "en"
 }

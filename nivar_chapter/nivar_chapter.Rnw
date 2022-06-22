@@ -12,11 +12,11 @@ We present a highly contiguous genome and transcriptome of the pathogenic yeast,
 \section{Introduction}
 \label{sec:intro}
 
-For immunocompromised hosts, opportunistic infections caused by drug-resistant fungi of the Candida genus are a major source of morbidity and mortality \citep{Borman2008-cr}. In particular, \textit{Candida nivariensis}, a close relative to \textit{Candida glabrata}, has emerged in recent years as especially resistant to antifungal therapies \citep{Borman2008-cr}. However, due to its phenotypic similarities to \textit{C. glabrata}, \textit{C. nivariensis} is generally underidentified and easily misdiagnosed, and currently, only molecular approaches can distinguish the two \citep{Aznar-Marin2016-yp}, spurring whole-genome sequencing studies on the clade \citep{Gabaldon2013-bk}.
+For immunocompromised hosts, opportunistic infections caused by drug-resistant fungi of the \textit{Candida} genus are a major source of morbidity and mortality \citep{Borman2008-cr}. In particular, \textit{Candida nivariensis}, a close relative to \textit{Candida glabrata}, has emerged in recent years as especially resistant to antifungal therapies \citep{Borman2008-cr}. However, due to its phenotypic similarities to \textit{C. glabrata}, \textit{C. nivariensis} is generally underidentified and easily misdiagnosed, and currently, only molecular approaches can distinguish the two \citep{Aznar-Marin2016-yp}, spurring whole-genome sequencing studies on the clade \citep{Gabaldon2013-bk}.
 
 Accurate assembly of repetitive genomic regions is crucial for understanding genetic diversity and virulence in pathogenic species. Fungal pathogens have long been known to exhibit a high degree of genome plasticity to enhance fitness in various environments \citep{Croll2013-mm, Ford2015-qs, Lopez-Fuentes2018-zt, Carrete2019-xo, Todd2019-sy}. Repetitive subtelomeric regions in particular play a crucial role in virulence for many pathogenic organisms \citep{Barry2003-ln, De_Las_Penas2003-zd}. Many yeasts’ subtelomeric regions contain and regulate the expression of genes crucial for biofilm formation, carbohydrate utilization, and cellular adhesion \citep{Naumov1995-ju,  De_Las_Penas2003-zd, Iraqui2005-hy}. These gene families often undergo rapid evolution through changes in copy number and sequence through either SNPs or indels \citep{Carreto2008-pz, Brown2010-az, Anderson2015-fa}. However, these subtelomeric regions remain one of the most difficult sections of the genome to accurately assemble due to their repetitive nature and high sequence similarity between genes, making genetic analysis cumbersome \citep{Brown2010-az}.
 
-One of the gene families of great interest to the pathogenic yeast field are the GPI-anchored cell wall proteins. This protein family includes many genes that encode for adhesion proteins that are found in various members of the \textit{Candida} genus, and play a key role in pathogenicity, being involved in regulation of biofilm formation, cell-to-cell contact, and host-pathogen interactions \citep{Timmermans2018-ci, McCall2019-zn}. With the many roles these genes play in infection, the accurate identification and understanding of the genetic variation of these genes vital to combating fungal pathogens.
+One of the gene families of great interest to the pathogenic yeast field are the GPI-anchored cell wall proteins. This protein family includes many genes that encode for adhesion proteins that are found in various members of the \textit{Candida} genus, and play a key role in pathogenicity, being involved in regulation of biofilm formation, cell-to-cell contact, and host-pathogen interactions \citep{Timmermans2018-ci, McCall2019-zn}. With the many roles these genes play in infection, the accurate identification and understanding of the genetic variation of these genes is vital to combating fungal pathogens.
 
 Unfortunately, like many eukaryotic pathogens, the current reference genome for \textit{C. nivariensis} (GenBank: GCA\_001046915.1) is highly fragmented. Constructed from sequencing of strain CBS9983, the reference genome consists of 123 contigs with an N50 of 248Kb \citep{Gabaldon2013-bk}, meaning that at least half of the total genome length is contained in contigs 248Kb or longer. This is typical of genomes assembled from limited short-read sequencing data; though short reads are highly accurate, assembling them into contiguous genomes is challenging depending on the size and complexity of the genome. Such short read assemblies have limited utility since large scale variants, repetitive regions, and genome structure remain difficult to elucidate, though they are often involved in the genome plasticity of pathogenic yeasts \citep{Carrete2018-xm}. In contrast, long-read sequencing data has been shown to produce much more contiguous assemblies, and have been crucial in sequencing through large repetitive regions, as well as assessing structural variants. However, read accuracy on the ONT platform in particular ranges from 86\% for early basecaller versions \citep{Wick2019-pa} to 97\% as currently reported by ONT.  This is lower than the read accuracy of short-read Illumina sequencing, which achieves 99.9\% accuracy \citep{Fox2014-li}.  In consensus sequences, most random errors can be corrected by other reads covering the same genomic loci, resulting in >99\% consensus accuracy \citep{Wick2019-pa}. However, systematic errors occurring in most or all of the reads cannot be corrected this way. For ONT data, indels at homopolymers dominate systematic errors \citep{Wick2019-pa}. These persistent errors can be problematic for gene prediction and annotation in downstream analysis \citep{Watson2019-tk} and are typically corrected with more accurate short-read data in mappable regions \citep{Garrison2012-iq, Walker2014-eh, Vaser2017-zk}.
 
@@ -32,7 +32,7 @@ Here, as part of our newly developed Methods in Nucleic Acid Sequencing universi
 \label{sec:genstat}
 
 
-Using our nanopore and Illumina sequencing data, we generated a new assembly of \textit{Candida nivariensis}, JHU\_Cniv\_v1 (Methods).  Our assembly consists of 11.8 Mb of sequence in 16 contigs with an N50 of 886 Kb ({\bf Figure \ref{fig:asms}}, {\bf Table \ref{tab:asmstats}}). Compared to the reference genome we have 275kb of additional sequence, 218kb of which is accounted for by gaps in the reference which are newly spanned by JHU\_Cniv\_v1. Of the 69 newly spanned gap sequences, 54 were identified as repeat regions. Another 13 gap regions were identified to contain a higher than average proportion of multi-mapping short reads (>10\% in gap regions vs 7\% average across the genome).
+Using our nanopore and Illumina sequencing data, we generated a new assembly of \textit{Candida nivariensis}, JHU\_Cniv\_v1 (Methods).  Our assembly consists of 11.8 Mb of sequence in 16 contigs with an N50 of 886 Kb ({\bf Figure \ref{fig:asms}}, {\bf Table \ref{tab:asmstats}}). Compared to the reference genome, we have 275kb of additional sequence, 218kb of which is accounted for by gaps in the reference which are newly spanned by JHU\_Cniv\_v1. Of the 69 newly spanned gap sequences, 54 were identified as repeat regions. Another 13 gap regions were identified to contain a higher than average proportion of multi-mapping short reads (>10\% in gap regions vs 7\% average across the genome).
 
 <<label=opts, results='hide', echo=FALSE, message = FALSE, warning=FALSE>>=
 library(knitr)
@@ -75,7 +75,7 @@ figstr <- paste0('\\begin{', what ,'}', where ,'
 cat(figstr)
 @
 
-To determine whether JHU\_Cniv\_v1 contigs represent full chromosomes, we looked for telomere repeats in our assembly and attempted to use related yeast reference genomes to scaffold. In our assembly, 11 contigs terminate at both ends in repeats of CTGGGTGCTGTGGGGT, the telomere sequence of \textit{Candida glabrata}(McEachern and Blackburn 1994). The other 4 non-mitochondrial sequences terminate only at one end in this telomeric repeat ({\bf Figure \ref{fig:asms}}, {\bf Table \ref{tab:telotable}}), suggesting they may scaffold to form two additional chromosomes. This suggests that, like \textit{C. glabrata}, the \textit{C. nivariensis} genome also contains 13 chromosomes.
+To determine whether JHU\_Cniv\_v1 contigs represent full chromosomes, we looked for telomere repeats in our assembly and attempted to use related yeast reference genomes to scaffold. In our assembly, 11 contigs terminate at both ends in repeats of CTGGGTGCTGTGGGGT, the telomere sequence of \textit{Candida glabrata} \citep{McEachern1994-mf}. The other 4 non-mitochondrial sequences terminate only at one end in this telomeric repeat ({\bf Figure \ref{fig:asms}}, {\bf Table \ref{tab:telotable}}), suggesting they may scaffold to form two additional chromosomes. This suggests that, like \textit{C. glabrata}, the \textit{C. nivariensis} genome also contains 13 chromosomes.
 
 <<results = 'asis', eval = TRUE>>=
 what <- "table"
@@ -87,21 +87,22 @@ where <- "[!ht]"
 
 figstr <- paste0('\\begin{', what ,'}', where ,'
 \\centering
-\\includegraphics[width = 1\\linewidth,keepaspectratio]{figure/', figname, '.pdf}
+\\includegraphics[width = .75\\linewidth,keepaspectratio]{figure/', figname, '.pdf}
 \\caption[', title ,']{{\\bf ', title  ,'.} ', desc ,' }
 \\label{', shortname ,'}
 \\end{', what ,'}
 ')
 cat(figstr)
+@
 
-We tried to further scaffold our assembly using the more contiguous and highly related glabrata genome as a reference, but we found that reference based scaffolders such as Medusa v1.6(Bosi et al. 2015) and RagTag v1.0.2(Alonge et al. 2019) either placed telomeric sequences in the middle of scaffolds or made no improvement ({\bf Figure \ref{fig:telopos}}). Upon aligning the \textit{C. glabrata} genome to JHU\_Cniv\_v1 using Mummer, we found only sporadic shared segments of negligible length ({\bf Figure \ref{fig:speciesmum}}), as opposed to a nearly perfect 1:1 alignment between JHU\_Cniv\_v1 and the current \textit{C. nivariensis} reference genome ({\bf Figure \ref{fig:mummer}}). This indicated that the \textit{C. glabrata} genome is not sufficiently similar to \textit{C. nivariensis} to use as a reference for contig scaffolding. Using the \textit{C. nivariensis} reference genome for scaffolding similarly results in erroneous placement of telomere repeats in the middle of scaffolds, or no change to our assembly. This is unsurprising, as the \textit{C. nivariensis} reference genome is so highly fragmented.
+We tried to further scaffold our assembly using the more contiguous and highly related glabrata genome as a reference, but we found that reference based scaffolders such as Medusa v1.6 \citep{Bosi2015-rm} and RagTag v1.0.2 \citep{Alonge2019-re} either placed telomeric sequences in the middle of scaffolds or made no improvement ({\bf Figure \ref{fig:telopos}}). Upon aligning the \textit{C. glabrata} genome to JHU\_Cniv\_v1 using Mummer, we found only sporadic shared segments of negligible length ({\bf Figure \ref{fig:speciesmum}}), as opposed to a nearly perfect 1:1 alignment between JHU\_Cniv\_v1 and the current \textit{C. nivariensis} reference genome ({\bf Figure \ref{fig:mummer}}). This indicated that the \textit{C. glabrata} genome is not sufficiently similar to \textit{C. nivariensis} to use as a reference for contig scaffolding. Using the \textit{C. nivariensis} reference genome for scaffolding similarly results in erroneous placement of telomere repeats in the middle of scaffolds, or no change to our assembly. This is unsurprising, as the \textit{C. nivariensis} reference genome is so highly fragmented.
 
 
 <<results = 'asis', eval = TRUE>>=
 what <- "figure"
 figname <- "telopos"
 title <- "Telomere positions reference based scaffolds"
-desc <- "Histogram of telomere repeat positions in our assembly, and in scaffolds produced by RagTag and MeDuSa. When MeDuSa is used with a database including the reference genomes of \textit{C. nivariensis}, \textit{C. glabrata}, C. bracarensis, and N. delphensis, telomeres are placed in the middle of contigs. The same result is produced when only the \textit{C. glabrata} genome is used for scaffolding with MeDuSa, and MeDuSa fails to run when only the \textit{C. nivariensis} reference is used. When the \textit{C. nivariensis} reference genome is used for scaffolding with RagTag, no changes are made. When the more contiguous \textit{C. glabrata} genome is used with RagTag, telomere sequences are again placed in the middle of sequences, suggesting a scaffolding error. "
+desc <- "Histogram of telomere repeat positions in our assembly, and in scaffolds produced by RagTag and MeDuSa. When MeDuSa is used with a database including the reference genomes of \textit{C. nivariensis}, \textit{C. glabrata}, C. bracarensis, and N. delphensis, telomeres are placed in the middle of contigs. The same result is produced when only the \textit{C. glabrata} genome is used for scaffolding with MeDuSa, and MeDuSa fails to run when only the \textit{C. nivariensis} reference is used. When the \textit{C. nivariensis} reference genome is used for scaffolding with RagTag, no changes are made. When the more contiguous \textit{C. glabrata} genome is used with RagTag, telomere sequences are again placed in the middle of sequences, suggesting a scaffolding error."
 shortname <- "fig:telopos"
 where <- "[!ht]"
 
@@ -120,7 +121,7 @@ cat(figstr)
 what <- "figure"
 figname <- "speciesmum"
 title <- "Whole genome alignments between related yeasts"
-desc <- "Whole genome alignment of our new assembly against the \textit{S. cerevisiae} (top left), and \textit{C. glabrata} (bottom left) reference genomes. For both, there are no long alignments, suggesting that there is little similarity in genome structure between these species and \textit{C. nivariensis}. C. bracarensis, a close relative to both \textit{C. glabrata} and \textit{C. nivariensis}, also shares little genome similarity to \textit{C. glabrata} (top right), suggesting that yeast genomes within the glabrata clade are not generally similar enough to support inter-species reference based scaffolding. We also compared \textit{C. glabrata} to the highly contiguous and complete \textit{S. cerevisiae} genome (bottom right) to check that genome contiguity alone did not bias the genome similarity detected."
+desc <- "Whole genome alignment of our new assembly against the \\textit{S. cerevisiae} (top left), and \\textit{C. glabrata} (bottom left) reference genomes. For both, there are no long alignments, suggesting that there is little similarity in genome structure between these species and \\textit{C. nivariensis}. \\textit{C. bracarensis}, a close relative to both \\textit{C. glabrata} and \\textit{C. nivariensis}, also shares little genome similarity to \\textit{C. glabrata} (top right), suggesting that yeast genomes within the \\textit{glabrata} clade are not generally similar enough to support inter-species reference based scaffolding. We also compared \\textit{C. glabrata} to the highly contiguous and complete \\textit{S. cerevisiae} genome (bottom right) to check that genome contiguity alone did not bias the genome similarity detected."
 shortname <- "fig:speciesmum"
 where <- "[!ht]"
 
@@ -138,7 +139,7 @@ cat(figstr)
 <<results = 'asis', eval = TRUE>>=
 what <- "figure"
 figname <- "mummer"
-title <- "Whole genome alignment of JHU\\_Cniv\\_v1 and the \textit{C. nivariensis} reference genome"
+title <- "Whole genome alignment of JHU\\_Cniv\\_v1 and the \\textit{C. nivariensis} reference genome"
 desc <- "Whole genome alignment of the current reference genome (y axis) compared to our new assembly (x axis). Alignments match with no notable structural variants, and very little missing or duplicated sequence."
 shortname <- "fig:mummer"
 where <- "[!ht]"
@@ -156,14 +157,14 @@ cat(figstr)
 \subsection{Genome completeness}
 \label{sec:gencomp}
 
-To assess assembly completeness, fungal single-copy orthologs were checked using BUSCO v5.0.0 (Simão et al. 2015) and its available saccharomycetes\_odb10 database. Out of 2137 BUSCOs searched, JHU\_Cniv\_v1 has only 14 missing, 13 of which are also missing in the current reference ({\bf Figure \ref{fig:busco}}). This missing gene, RNA polymerase archaeal subunit P/eukaryotic subunit RPABC4 (buscoID 41996at4891), though present in the reference, has the second lowest combined match length and match score among all genes searched. From the reference, we extracted the nucleotide sequence of this match using the coordinates reported by BUSCO, and searched for it in JHU\_Cniv\_v1 using BLAST. We found a full-length match with 99.9/% identity, suggesting that this BUSCO is not actually absent in JHU\_Cniv\_v1. Upon further examination of this alignment, we found that all seven nonmatching nucleotides consist of small deletions associated with poly-A or poly-T homopolymers, known error-prone regions for nanopore sequencing data (Watson and Warr 2019).
+To assess assembly completeness, fungal single-copy orthologs were checked using BUSCO v5.0.0 \citep{Simao2015-zz} and its available saccharomycetes\_odb10 database. Out of 2137 BUSCOs searched, JHU\_Cniv\_v1 has only 14 missing, 13 of which are also missing in the current reference ({\bf Figure \ref{fig:busco}}). This additional missing gene, RNA polymerase archaeal subunit P/eukaryotic subunit RPABC4 (buscoID 41996at4891), though present in the reference, has the second lowest combined match length and match score among all genes searched. From the reference, we extracted the nucleotide sequence of this match using the coordinates reported by BUSCO, and searched for it in JHU\_Cniv\_v1 using BLAST. We found a full-length match with 99.9\% identity, suggesting that this BUSCO is not actually absent in JHU\_Cniv\_v1. Upon further examination of this alignment, we found that all seven nonmatching nucleotides consist of small deletions associated with poly-A or poly-T homopolymers, known error-prone regions for nanopore sequencing data \citep{Watson2019-tk}.
 
 <<results = 'asis', eval = TRUE>>=
 what <- "figure"
 figname <- "busco"
 title <- "Completeness of the JHU\\_Cniv\\_v1 assembly"
-desc <- "Genome and transcriptome completeness Bar charts comparing BUSCOs detected in JHU\\_Cniv\\_v1 and accompanying transcriptome to those of the current C. albicans, \textit{S. cerevisiae}, \textit{C. glabrata}, and \textit{C. nivariensis} reference genomes. No reference transcriptome is currently available for \textit{C. nivariensis}."
-shortname <- "fig:asms"
+desc <- "Genome and transcriptome completeness Bar charts comparing BUSCOs detected in JHU\\_Cniv\\_v1 and accompanying transcriptome to those of the current \\textit{C. albicans}, \\textit{S. cerevisiae}, \\textit{C. glabrata}, and \\textit{C. nivariensis} reference genomes. No reference transcriptome is currently available for \\textit{C. nivariensis}."
+shortname <- "fig:busco"
 where <- "[!ht]"
 
 figstr <- paste0('\\begin{', what ,'}', where ,'
@@ -179,17 +180,19 @@ cat(figstr)
 \subsection{Repetitive genes}
 \label{sec:repgenes}
 
-As \textit{C. glabrata} subtelomeric regions have been proven to be difficult to correctly assemble using short-read data (Xu et al. 2020), we compare the copy number of \textit{C. glabrata} subtelomere gene homologs between the \textit{C. nivariensis} reference genome and JHU\_Cniv\_v1. Using the assembly and re-annotation of \textit{C. glabrata} from Xu et al. (2020), we extracted the sequences of the \textit{C. glabrata} subtelomere genes and used BLAST (v2.6.0+) to find any matches in the \textit{C. nivariensis} reference and JHU\_Cniv\_v1. We observed an identical set of 48 \textit{C. glabrata} subtelomere genes in both \textit{C. nivariensis} genomes but found that the copy number for several genes was greater in JHU\_Cniv\_v1 (Figure 3A). To account for genes truncated by short contigs in the reference genome, we calculate copy number by summing the alignment lengths of all the hits of a particular gene and dividing by gene length. Of the 48 \textit{C. glabrata} genes with homology in \textit{C. nivariensis}, 35 are ribosomal. With the exception of just three ribosomal genes, which occur a similar number of times in both \textit{C. nivariensis} genomes, all homologous ribosomal genes appear once in the reference, and either four or six times in JHU\_Cniv\_v1 (Figure 3A).
 
-Using JHU\_Cniv\_v1, we identified GPI-anchored membrane proteins among annotated genes >1000-nt long. Using GffRead (Pertea and Pertea 2020), we constructed the amino acid sequences for these genes and excluded any with internal stop codons. We then used PredGPI (Pierleoni et al. 2008) to predict which of these encoded GPI proteins, using an FDR cutoff of <0.0005 (Xu et al. 2020) to find 86 total genes. As GPI-anchored fungal adhesins typically contain tandem repeats (Lipke 2018; Xu et al. 2020), we further filtered for genes overlapping with tandem repeats as classified by Tandem Repeat Finder and identified 53 of the GPI genes as putative adhesins. As with \textit{C. glabrata}, the putative adhesins typically spanned multiple kilobases (Figure 3B), though we do not find very long (>13 kb) genes in contrast to several glabrata GPI-CWPs. To find the corresponding adhesin genes in the \textit{C. nivariensis} reference genome, we again used BLAST, and compared the longest hit of each adhesin gene to the true length of the gene as predicted in JHU\_Cniv\_v1 (Figure 3C). Notably, no hit in the reference genome exceeded 3.5 kb, and 27 of these adhesin genes are not found continuously, suggesting the previous reference either truncated or did not continuously assemble these important pathogenicity genes.
+As \textit{C. glabrata} subtelomeric regions have been proven to be difficult to correctly assemble using short-read data \citep{Xu2020-ta}, we compare the copy number of \textit{C. glabrata} subtelomere gene homologs between the \textit{C. nivariensis} reference genome and JHU\_Cniv\_v1. Using the assembly and re-annotation of \textit{C. glabrata} from Xu et al. (2020), we extracted the sequences of the \textit{C. glabrata} subtelomere genes and used BLAST (v2.6.0+) to find any matches in the \textit{C. nivariensis} reference and JHU\_Cniv\_v1. We observed an identical set of 48 \textit{C. glabrata} subtelomere genes in both \textit{C. nivariensis} genomes but found that the copy number for several genes was greater in JHU\_Cniv\_v1 ({\bf Figure \ref{fig:gpicwps}}). To account for genes truncated by short contigs in the reference genome, we calculate copy number by summing the alignment lengths of all the hits of a particular gene and dividing by gene length. Of the 48 \textit{C. glabrata} genes with homology in \textit{C. nivariensis}, 35 are ribosomal. With the exception of just three ribosomal genes, which occur a similar number of times in both \textit{C. nivariensis} genomes, all homologous ribosomal genes appear once in the reference, and either four or six times in JHU\_Cniv\_v1 ({\bf Figure \ref{fig:gpicwps}}).
+
+Using JHU\_Cniv\_v1, we identified GPI-anchored membrane proteins among annotated genes >1000-nt long. Using GffRead \citep{Pertea2020-lw}, we constructed the amino acid sequences for these genes and excluded any with internal stop codons. We then used PredGPI \citep{Pierleoni2008-aw} to predict which of these encoded GPI proteins, using an FDR cutoff of <0.0005 \citep{Xu2020-ta} to find 86 total genes. As GPI-anchored fungal adhesins typically contain tandem repeats \citep{Lipke2018-ow, Xu2020-ta}, we further filtered for genes overlapping with tandem repeats as classified by Tandem Repeat Finder and identified 53 of the GPI genes as putative adhesins. As with \textit{C. glabrata}, the putative adhesins typically spanned multiple kilobases ({\bf Figure \ref{fig:gpicwps}}), though we do not find very long (>13 kb) genes in contrast to several glabrata GPI-CWPs. To find the corresponding adhesin genes in the \textit{C. nivariensis} reference genome, we again used BLAST, and compared the longest hit of each adhesin gene to the true length of the gene as predicted in JHU\_Cniv\_v1 ({\bf Figure \ref{fig:gpicwps}}). Notably, no hit in the reference genome exceeded 3.5 kb, and 27 of these adhesin genes are not found continuously, suggesting the previous reference either truncated or did not continuously assemble these important pathogenicity genes.
+
 
 <<results = 'asis', eval = TRUE>>=
 what <- "figure"
 figname <- "gpicwps"
 title <- "GPI genes"
-desc <- "{\\bf (A)} Scatterplot showing the number of times each glabrata subtelomere gene homolog appears in the \textit{C. nivariensis} reference genome and in JHU\\_Cniv\\_v1. Overlapping points are shown on the color scale, and the y = x line is shown in dashed gray. {\\bf (B)} Histogram of adhesion protein lengths in glabrata as annotated by Xu et al., and the lengths of predicted adhesion proteins found in JHU\\_Cniv\\_v1. {\\bf (C)} Scatterplot showing the maximum BLAST alignment lengths for each predicted nivariensis GPI gene in JHU\\_Cniv\\_v1 and the \textit{C. nivariensis} reference genome. Overlapping points are shown on the color scale, and the y = x line is shown in dashed gray."
+desc <- "{\\bf (A)} Scatterplot showing the number of times each glabrata subtelomere gene homolog appears in the \\textit{C. nivariensis} reference genome and in JHU\\_Cniv\\_v1. Overlapping points are shown on the color scale, and the y=x line is shown in dashed gray. {\\bf (B)} Histogram of adhesion protein lengths in glabrata as annotated by Xu et al., and the lengths of predicted adhesion proteins found in JHU\\_Cniv\\_v1. {\\bf (C)} Scatterplot showing the maximum BLAST alignment lengths for each predicted nivariensis GPI gene in JHU\\_Cniv\\_v1 and the \\textit{C. nivariensis} reference genome. Overlapping points are shown on the color scale, and the y=x line is shown in dashed gray."
 shortname <- "fig:gpicwps"
-where <- "[!ht]"
+where <- "[!hb]"
 
 figstr <- paste0('\\begin{', what ,'}', where ,'
 \\centering
@@ -201,15 +204,32 @@ figstr <- paste0('\\begin{', what ,'}', where ,'
 cat(figstr)
 @
 
-
 \section{Discussion}
 \label{sec:discuss}
 
-JHU\_Cniv\_v1 is a high quality, extremely contiguous assembly of \textit{Candida nivariensis} constructed by long reads and polished by short reads. It spans large, repetitive gaps in the nivariensis genome that have fragmented short-read assemblies thus far, and includes a full mitochondrial chromosome, as well as telomere repeats. These telomere repeats are identical to those in \textit{C. glabrata} and have been found to be shared within the entire “glabrata group” (Gabaldón et al. 2013). The orientation of the telomeres suggests that \textit{C. nivariensis} has 13 chromosomes, which is in agreement with previous PFGE data (Gabaldón et al. 2013). Furthermore, of the contigs missing telomere repeats on one end, we note that scaffolding tig05 with tig12 and tig02 with tig24 would result in 13 chromosomes that would all match PFGE length estimates to 8\% error or less, which is within the expected range of PFGE error for very large DNA fragments (Cutting et al. 1988).
+JHU\_Cniv\_v1 is a high quality, extremely contiguous assembly of \textit{Candida nivariensis} constructed by long reads and polished by short reads. It spans large, repetitive gaps in the nivariensis genome that have fragmented short-read assemblies thus far, and includes a full mitochondrial chromosome, as well as telomere repeats. These telomere repeats are identical to those in \textit{C. glabrata} and have been found to be shared within the entire “\textit{glabrata} group” \citep{Gabaldon2013-bk}. The orientation of the telomeres suggests that \textit{C. nivariensis} has 13 chromosomes, which is in agreement with previous PFGE data \citep{Gabaldon2013-bk}. Furthermore, of the contigs missing telomere repeats on one end, we note that scaffolding tig05 with tig12 and tig02 with tig24 would result in 13 chromosomes that would all match PFGE length estimates to 8\% error or less, which is within the expected range of PFGE error for very large DNA fragments \citep{Cutting1988-mw}.
 
 As assessed by BUSCO, genome completeness of the current \textit{C. nivariensis} reference and JHU\_Cniv\_v1 are comparable to other related yeasts, with our genome slightly improved over the previous reference. However, while JHU\_Cniv\_v1 is a much more contiguous assembly than any \textit{C. nivariensis} genome preceding it, the few remaining sequence errors still can pose a problem to downstream analyses, as evidenced by the seemingly absent BUSCO we manually identified.
 
-Our accompanying RNA-seq data enabled us to annotate this genome, achieving a similar level of BUSCO completeness to some of the most highly studied model organisms. Our annotation has comparable or lower levels of missing and fragmented BUSCOs compared to the reference annotations, though more duplicated ones. While our annotation is largely comparable to those of similar yeasts, it has not been manually curated, and should thus be treated as preliminary. Of course, as these organisms were grown under only one condition before RNA extraction, it remains unlikely that this annotation is fully complete.
+Our accompanying RNA-seq data enabled us to annotate this genome, achieving a similar level of BUSCO completeness to some of the most highly studied model organisms. Our annotation has comparable or lower levels of missing and fragmented BUSCOs compared to the reference annotations, though more duplicated ones. While our annotation is largely comparable to those of similar yeasts ({\bf Table \ref{tab:refgenestable}}), it has not been manually curated, and should thus be treated as preliminary. Of course, as these organisms were grown under only one condition before RNA extraction, it remains unlikely that this annotation is fully complete.
+
+<<results = 'asis', eval = TRUE>>=
+what <- "table"
+figname <- "refgenestable"
+title <- "Gene and exon counts of JHU\\_Cniv\\_v1 and related yeasts"
+desc <- "Gene and exon counts of our annotation and currently available reference annotations"
+shortname <- "tab:refgenestable"
+where <- "[!ht]"
+
+figstr <- paste0('\\begin{', what ,'}', where ,'
+\\centering
+\\includegraphics[width = .75\\linewidth,keepaspectratio]{figure/', figname, '.pdf}
+\\caption[', title ,']{{\\bf ', title  ,'.} ', desc ,' }
+\\label{', shortname ,'}
+\\end{', what ,'}
+')
+cat(figstr)
+@
 
 To demonstrate the utility of genome and annotation contiguity, we examine genes from a difficult to assemble region in \textit{C. glabrata}. For each subtelomeric \textit{C. glabrata} gene with homology in \textit{C. nivariensis}, more copies were found in JHU\_Cniv\_v1, as its contiguity allows it to more easily capture repeated genome elements. We note that of subtelomeric glabrata genes found, the majority are ribosomal, and of these, only three do not show a four or six times increased copy number in JHU\_Cniv\_v1. Due to the repetitive nature of rDNA arrays, it can be difficult for short-read genome assemblies to capture them in their full complexity. Conversely, our long-read assembly more easily spans these regions, potentially providing a clearer look at the biology in which they are involved.
 
@@ -222,7 +242,7 @@ In addition to genes arranged in complex and repetitive patterns, our more conti
 \subsection{Media and growth conditions}
 \label{sec:methods}
 
-For genomic extractions, a single colony of \textit{C. nivariensis} CBS9983, originally isolated from a blood culture of a Spanish woman (Alcoba-Flórez et al. 2005), was inoculated into synthetic complete (SC) medium supplemented with 2\% glucose and shaken overnight at 30°C in a glass culture tube. For RNA extractions, \textit{C. nivariensis} CBS9983 was grown to log phase in SC medium supplemented with 2\% glucose at 30°C in a glass culture tube.
+For genomic extractions, a single colony of \textit{C. nivariensis} CBS9983, originally isolated from a blood culture of a Spanish woman \citep{Alcoba-Florez2005-xn}, was inoculated into synthetic complete (SC) medium supplemented with 2\% glucose and shaken overnight at 30°C in a glass culture tube. For RNA extractions, \textit{C. nivariensis} CBS9983 was grown to log phase in SC medium supplemented with 2\% glucose at 30°C in a glass culture tube.
 
 \subsection{DNA isolation and sequencing}
 \label{sec:methods}
@@ -237,71 +257,15 @@ RNA was extracted from liquid culture using the Zymo Fungal/Bacterial RNA MiniPr
 \subsection{Genome assembly}
 \label{sec:methods}
 
-Nanopore data were basecalled using Guppy v3.2.4 on default settings. Reads greater than 3 kb long with an average basecalling quality score greater than 7 were assembled into 21 contigs using Canu v2.1 (Koren et al. 2017) on default settings with the genome size set to 11 m. Illumina DNA reads were trimmed for adapters and quality using Trimmomatic v0.39 (Bolger et al. 2014) using settings \texttt{LEADING:3 TRAILING:3 SLIDINGWINDOW:4:30 MINLEN:36}. The trimmed reads were then used to iteratively correct draft assembly using Freebayes v1.3.4-pre1 (Garrison and Marth 2012) with alignments made by bwa mem v0.7.17-r1198-dirty (Li 2013) using default settings. Changes were made at positions where both the alternative allele frequency was greater than 0.5 and the total number of alternate allele observations was greater than 5. We aligned and corrected the assembly iteratively for three rounds, after which further rounds of corrections made no changes.
+Nanopore data were basecalled using Guppy v3.2.4 on default settings. Reads greater than 3 kb long with an average basecalling quality score greater than 7 were assembled into 21 contigs using Canu v2.1 \citep{Koren2017-wf} on default settings with the genome size set to 11 m. Illumina DNA reads were trimmed for adapters and quality using Trimmomatic v0.39 \citep{Bolger2014-ax} using settings \texttt{LEADING:3 TRAILING:3 SLIDINGWINDOW:4:30 MINLEN:36}. The trimmed reads were then used to iteratively correct draft assembly using Freebayes v1.3.4-pre1 \citep{Garrison2012-iq} with alignments made by bwa mem v0.7.17-r1198-dirty \citep{Li2013-ec} using default settings. Changes were made at positions where both the alternative allele frequency was greater than 0.5 and the total number of alternate allele observations was greater than 5. We aligned and corrected the assembly iteratively for three rounds, after which further rounds of corrections made no changes.
 
-Of our 21 corrected contigs, 5 were flagged as repeats by Canu and originally constructed from fewer than 180 nanopore reads. The remaining 16 contigs were constructed from over 1800 nanopore reads each. Because the five repetitive contigs were constructed from so few reads and were found to occur elsewhere in the assembly through Mummer v4.0.0rc1 (Marçais et al. 2018) and nanopore read alignment Minimap2 v2.17 (Li 2018), we excluded them from the final assembly. One 32-Kb contig was suggested to be circular by Canu, and therefore likely to be a mitochondrial sequence. To confirm, we aligned this contig to the complete mitochondrial genome of \textit{C. nivariensis} (NCBI: NC\_036379.1) using Mummer, and observed a 3662-bp sequence in the reference mitochondrial genome which appears at both ends of our 32-kb circular contig. Using the Mummer alignments (Supplementary Figure S1), we removed the extraneous 3662 bp from the end of our contig, resulting in a 28-kb mitochondrial genome, which we named “JHU\_Cniv\_v1\_mito.” Lastly, we remapped the ONT and Illumina reads back to the assembly, and found no bases with zero coverage, indicating that none of our contigs need to be further broken (Supplementary Figure S2). Henceforth, we refer to this assembly as “JHU\_Cniv\_v1.”
-
-Repeat regions were identified by Tandem Repeats Finder v4.09 (Benson 1999) with settings (Xu et al. 2020): \texttt{match = 2, mismatch = 7, delta = 7, pm = 80, pi = 10, minscore = 50, maxperiod = 600}. Multimapping short reads were identified using bwa mem (Li 2013) on default settings.
-
-\subsection{Annotation}
-\label{sec:methods}
-
-Illumina RNA-seq reads were trimmed using Trimmomatic v0.39 (Bolger et al. 2014) in order to check for any remaining adapter sequences and to filter out reads with low base quality. HISAT2 v2.1.0 was used on default settings to align the trimmed cDNA reads to the assembly. The BRAKER v2.1.5 (Hoff et al. 2019) pipeline was then used to make gene predictions using these alignments. Currently, ONT dRNA compatibility with BRAKER is in development, and that data was thus not used for prediction. Instead, ONT dRNA reads were aligned to the genome assembly using Minimap2 on recommended settings for nanopore direct RNA reads (\texttt{-ax splice -uf -k14}). Transcripts were then assembled from the dRNA alignments using StringTie2 v2.1.5 (Kovaka et al. 2019) with the long read option (-L). Using Liftoff v1.5.0 (Shumate and Salzberg 2020), we lifted over the annotations from \textit{C. glabrata} (NCBI: GCF\_000002545.3), \textit{Saccharomyces cerevisiae} (NCBI: GCF\_000146045.2), Candida albicans (NCBI: GCF\_000182965.3).
-
-Starting with the BRAKER predictions, Gffcompare v0.12.1 (Pertea and Pertea 2020) was used to add nonoverlapping annotations lifted from \textit{C. glabrata}, \textit{S. cerevisiae}, and C. albicans in that order. Specifically, we add any annotation with class code “u” in the Gffcompare .tmap outputs when comparing our list of genes with a list of potential genes to add, since these refer to intergenic regions devoid of any overlap or proximity to previous annotations. Finally, we compared and added nonredundant transcripts assembled by stringtie2 to the annotation using gffcompare.
-
-\subsection{Data Availability}
-\label{sec:methods}
-
-All sequence data are available in the Sequence Read Archive, under BioProject PRJNA686979. This Whole Genome Shotgun project has been deposited at DDBJ/ENA/GenBank under the accession JAEVGP000000000. The version described in this here is version JAEVGP010000000. The JHU\_Cniv\_v1 assembly and annotation are also available in Zenodo (http://doi.org/10.5281/zenodo.4644506). Code used for analysis is available at https://github.com/timplab/nivar.
-
-
-
-
-
-
-
-<<results = 'asis', eval = TRUE>>=
-what <- "table"
-figname <- "genecounttable"
-title <- "Contributions from each annotation software"
-desc <- "Number of genes and exons added by each software"
-shortname <- "tab:telotable"
-where <- "[!ht]"
-
-figstr <- paste0('\\begin{', what ,'}', where ,'
-\\centering
-\\includegraphics[width = 1\\linewidth,keepaspectratio]{figure/', figname, '.pdf}
-\\caption[', title ,']{{\\bf ', title  ,'.} ', desc ,' }
-\\label{', shortname ,'}
-\\end{', what ,'}
-')
-cat(figstr)
-
-<<results = 'asis', eval = TRUE>>=
-what <- "table"
-figname <- "refgenestable"
-title <- "Gene and exon counts of JHU\\_Cniv\\_v1 and related yeasts"
-desc <- "Gene and exon counts of our annotation and currently available reference annotations"
-shortname <- "tab:telotable"
-where <- "[!ht]"
-
-figstr <- paste0('\\begin{', what ,'}', where ,'
-\\centering
-\\includegraphics[width = 1\\linewidth,keepaspectratio]{figure/', figname, '.pdf}
-\\caption[', title ,']{{\\bf ', title  ,'.} ', desc ,' }
-\\label{', shortname ,'}
-\\end{', what ,'}
-')
-cat(figstr)
-
-
+Of our 21 corrected contigs, 5 were flagged as repeats by Canu and originally constructed from fewer than 180 nanopore reads. The remaining 16 contigs were constructed from over 1800 nanopore reads each. Because the five repetitive contigs were constructed from so few reads and were found to occur elsewhere in the assembly through Mummer v4.0.0rc1 \citep{Marcais2018-mm} and nanopore read alignment Minimap2 v2.17 \citep{Li2018-eq}, we excluded them from the final assembly. One 32-Kb contig was suggested to be circular by Canu, and therefore likely to be a mitochondrial sequence. To confirm, we aligned this contig to the complete mitochondrial genome of \textit{C. nivariensis} (NCBI: NC\_036379.1) using Mummer, and observed a 3662-bp sequence in the reference mitochondrial genome which appears at both ends of our 32-kb circular contig. Using the Mummer alignments ({\bf Figure \ref{fig:mito}}), we removed the extraneous 3662 bp from the end of our contig, resulting in a 28-kb mitochondrial genome, which we named “JHU\_Cniv\_v1\_mito.” Lastly, we remapped the ONT and Illumina reads back to the assembly, and found no bases with zero coverage, indicating that none of our contigs need to be further broken ({\bf Figure \ref{fig:covhist}}). Henceforth, we refer to this assembly as “JHU\_Cniv\_v1.”
 
 <<results = 'asis', eval = TRUE>>=
 what <- "figure"
 figname <- "mito"
 title <- "Alignment of JHU\\_Cniv\\_v1 mitochrondrial contig and the \textit{C. nivariensis} mitochondrial genome"
-desc <- "Alignment of our 32Kb circular contig (x axis) with the completed mitochondrial genome of the \textit{C. nivariensis} reference genome (y axis). The final 3662bp of this contig appears twice in the reference genome."
+desc <- "Alignment of our 32Kb circular contig (x axis) with the completed mitochondrial genome of the \\textit{C. nivariensis} reference genome (y axis). The final 3662bp of this contig appears twice in the reference genome."
 shortname <- "fig:mito"
 where <- "[!ht]"
 
@@ -314,11 +278,6 @@ figstr <- paste0('\\begin{', what ,'}', where ,'
 ')
 cat(figstr)
 @
-
-
-
-
-
 
 <<results = 'asis', eval = TRUE>>=
 what <- "figure"
@@ -337,3 +296,35 @@ figstr <- paste0('\\begin{', what ,'}', where ,'
 ')
 cat(figstr)
 @
+
+Repeat regions were identified by Tandem Repeats Finder v4.09 \citep{Benson1999-lr} with settings \citep{Xu2020-ta}: \texttt{match = 2, mismatch = 7, delta = 7, pm = 80, pi = 10, minscore = 50, maxperiod = 600}. Multimapping short reads were identified using bwa mem \citep{Li2013-ec} on default settings.
+
+\subsection{Annotation}
+\label{sec:methods}
+
+Illumina RNA-seq reads were trimmed using Trimmomatic v0.39 \citep{Bolger2014-ax} in order to check for any remaining adapter sequences and to filter out reads with low base quality. HISAT2 v2.1.0 was used on default settings to align the trimmed cDNA reads to the assembly. The BRAKER v2.1.5 pipeline \citep{Hoff2019-rd} was then used to make gene predictions using these alignments. Currently, ONT dRNA compatibility with BRAKER is in development, and that data was thus not used for prediction. Instead, ONT dRNA reads were aligned to the genome assembly using Minimap2 on recommended settings for nanopore direct RNA reads (\texttt{-ax splice -uf -k14}). Transcripts were then assembled from the dRNA alignments using StringTie2 v2.1.5 \citep{Kovaka2019-lg} with the long read option (\texttt{-L}). Using Liftoff v1.5.0 \citep{Shumate2020-fo}, we lifted over the annotations from \textit{C. glabrata} (NCBI: GCF\_000002545.3), \textit{Saccharomyces cerevisiae} (NCBI: GCF\_000146045.2), \textit{Candida albicans} (NCBI: GCF\_000182965.3).
+
+Starting with the BRAKER predictions, GffCompare v0.12.1 \citep{Pertea2020-lw} was used to add nonoverlapping annotations lifted from \textit{C. glabrata}, \textit{S. cerevisiae}, and \textit{C. albicans} in that order. Specifically, we add any annotation with class code “u” in the GffCompare .tmap outputs when comparing our list of genes with a list of potential genes to add, since these refer to intergenic regions devoid of any overlap or proximity to previous annotations. Finally, we compared and added nonredundant transcripts assembled by StringTie2 to the annotation using GffCompare.
+
+<<results = 'asis', eval = TRUE>>=
+what <- "table"
+figname <- "genecounttable"
+title <- "Contributions from each annotation software"
+desc <- "Number of genes and exons added by each software"
+shortname <- "tab:genecounttable"
+where <- "[!ht]"
+
+figstr <- paste0('\\begin{', what ,'}', where ,'
+\\centering
+\\includegraphics[width = .75\\linewidth,keepaspectratio]{figure/', figname, '.pdf}
+\\caption[', title ,']{{\\bf ', title  ,'.} ', desc ,' }
+\\label{', shortname ,'}
+\\end{', what ,'}
+')
+cat(figstr)
+@
+
+\subsection{Data Availability}
+\label{sec:methods}
+
+All sequence data are available in the Sequence Read Archive, under BioProject PRJNA686979. This Whole Genome Shotgun project has been deposited at DDBJ/ENA/GenBank under the accession JAEVGP000000000. The version described in this here is version JAEVGP010000000. Code used for analysis is available at https://github.com/timplab/nivar.
