@@ -246,6 +246,13 @@ Doctor of Philosophy }\\
 %% If using Overleaf, you'll have to upload the resulting tex file & figures
 %% since Overleaf does not support Rnw files right now (April 13, 2016)
 
+\graphicspath{{amr_chapter/figure/}{amr_chapter/}}
+\begin{refsection}[amr_chapter/amr_chapter.bib]
+\include{amr_chapter/amr_chapter}
+\cleardoublepage
+\printbibliography[title={References}]
+\end{refsection}
+
 \graphicspath{{nivar_chapter/figure/}{nivar_chapter/}}
 \begin{refsection}[nivar_chapter/nivar_chapter.bib]
 \include{nivar_chapter/nivar_chapter}
