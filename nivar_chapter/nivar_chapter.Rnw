@@ -264,7 +264,7 @@ Of our 21 corrected contigs, 5 were flagged as repeats by Canu and originally co
 <<results = 'asis', eval = TRUE>>=
 what <- "figure"
 figname <- "mito"
-title <- "Alignment of JHU\\_Cniv\\_v1 mitochrondrial contig and the \textit{C. nivariensis} mitochondrial genome"
+title <- "Alignment of JHU\\_Cniv\\_v1 mitochrondrial contig and the \\textit{C. nivariensis} mitochondrial genome"
 desc <- "Alignment of our 32Kb circular contig (x axis) with the completed mitochondrial genome of the \\textit{C. nivariensis} reference genome (y axis). The final 3662bp of this contig appears twice in the reference genome."
 shortname <- "fig:mito"
 where <- "[!ht]"
