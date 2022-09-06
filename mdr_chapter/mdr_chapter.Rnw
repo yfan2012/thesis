@@ -29,7 +29,7 @@ Here, we demonstrate a framework to perform metagenomic binning using methylatio
 \subsection{Microbial Community Standard}
 \label{sec:zymo}
 
-To test the feasibility of associating plasmids to chromosomes, we used the ZymoBIOMICS Microbial Community Standard, which contains seven different species of bacteria and one yeast {\bf Table \ref{tab:motifsummary}}. Among the bacteria in this sample, the E. coli strain contains a 110kb plasmid, and the S. aureus strain contains 3 plasmids with lengths 6.3kb, 2.2kb, and 2.9kb. As the identity of each species in the sample is known, we used their reference genomes to call methylation, and use these methylation signatures to bin plasmids with bacterial chromosomes.
+To test the feasibility of associating plasmids to chromosomes, we used the ZymoBIOMICS Microbial Community Standard, which contains seven different species of bacteria and one yeast {\bf Table \ref{tab:motifsummary}}. Among the bacteria in this sample, the \textit{E.coli} strain contains a 110kb plasmid, and the \textit{S. aureus} strain contains 3 plasmids with lengths 6.3kb, 2.2kb, and 2.9kb. As the identity of each species in the sample is known, we used their reference genomes to call methylation, and use these methylation signatures to bin plasmids with bacterial chromosomes.
 
 
 <<label=opts, results='hide', echo=FALSE, message = FALSE, warning=FALSE>>=
@@ -40,7 +40,7 @@ opts_chunk$set(echo=FALSE, prompt=FALSE, message=FALSE, warning=FALSE, comment="
 <<results = 'asis', eval = TRUE>>=
 what <- "table"
 figname <- "motifsummary"
-title <- "Summary of known methylation motifs in the ZymoBIOMICS sample."
+title <- "Summary of known methylation motifs in the ZymoBIOMICS sample"
 desc <- "5mC modifications are denoted as 'm,' and tmA motifs are denoted as 'a.'"
 shortname <- "tab:motifsummary"
 where <- "[!hb]"
@@ -56,13 +56,13 @@ cat(figstr)
 @
 
 
-To select the ‘barcode,’ or set of methylation motifs that would best differentiate between the species in the sample, we used the 6mA motifs and WGBS data published in McIntyre \citep{McIntyre2017-ed} et al. From the WGBS data, we identified the short (<8bp) 5mC motifs methylated in each species, and confirmed that these short motifs account for >99\% of all 5mC methylation in these species {\bf Table \ref{tab:bisulf}}. For both 6mA and 5mC motifs, only the short motifs of Type II and Type III MTases were included, since they comprise 85 of the 100 most frequently occurring methylation specificities listed in REBASE \citep{Roberts2003-ss}. While excluding Type I motifs excludes the potential discriminatory power they provide, it also simplifies analysis by avoiding the long, ambiguous sections of the Type I bipartite motifs, e.g. EcoKI (AAC[N6]GTGC or GCAC[N6]GTT). Due to the absence of many motifs in the short S. aureus plasmids, we further narrowed the barcode to just GATC, CAGAG, CCWGG and CTKVAG {\bf Table \ref{tab:motifsummary}}. Despite this motif reduction, the two shortest S. aureus plasmids still did not have methylation calls for all four motifs {\bf Table \ref{tab:meancov}, Figure \ref{fig:covhists}}, and were therefore excluded from further analysis. According to the WGBS and PacBio data \citep{McIntyre2017-ed} {\bf Tables \ref{tab:motifsummary}, \ref{tab:motifsummary}}, this four-motif barcode is theoretically sufficient to distinguish between all species except L. monocytogenes and P. aeruginosa, neither of which is methylated at any of the four motifs in the barcode. However, this reduction sufficiently preserves the methylation motifs specific to S. aureus and E. coli such that they are uniquely distinguishable from the other species in the sample, enabling us to correctly assign these plasmids to their hosts.
+To select the ‘barcode,’ or set of methylation motifs that would best differentiate between the species in the sample, we used the 6mA motifs and WGBS data published in McIntyre \citep{McIntyre2017-ed} et al. From the WGBS data, we identified the short (<8bp) 5mC motifs methylated in each species, and confirmed that these short motifs account for >99\% of all 5mC methylation in these species {\bf Table \ref{tab:bisulf}}. For both 6mA and 5mC motifs, only the short motifs of Type II and Type III MTases were included, since they comprise 85 of the 100 most frequently occurring methylation specificities listed in REBASE \citep{Roberts2003-ss}. While excluding Type I motifs excludes the potential discriminatory power they provide, it also simplifies analysis by avoiding the long, ambiguous sections of the Type I bipartite motifs, e.g. EcoKI (AAC[N6]GTGC or GCAC[N6]GTT). Due to the absence of many motifs in the short \textit{S. aureus} plasmids, we further narrowed the barcode to just GATC, CAGAG, CCWGG and CTKVAG {\bf Table \ref{tab:motifsummary}}. Despite this motif reduction, the two shortest \textit{S. aureus} plasmids still did not have methylation calls for all four motifs {\bf Table \ref{tab:meancov}, Figure \ref{fig:covhists}}, and were therefore excluded from further analysis. According to the WGBS and PacBio data \citep{McIntyre2017-ed} {\bf Tables \ref{tab:motifsummary}, \ref{tab:motifsummary}}, this four-motif barcode is theoretically sufficient to distinguish between all species except \textit{L. monocytogenes} and \textit{P. aeruginosa}, neither of which is methylated at any of the four motifs in the barcode. However, this reduction sufficiently preserves the methylation motifs specific to \textit{S. aureus} and \textit{E.coli} such that they are uniquely distinguishable from the other species in the sample, enabling us to correctly assign these plasmids to their hosts.
 
 
 <<results = 'asis', eval = TRUE>>=
 what <- "table"
 figname <- "bisulf"
-title <- "5mC methylation motifs in the ZymoBIOMICS sample."
+title <- "5mC methylation motifs in the ZymoBIOMICS sample"
 desc <- "For each DNA sequence in the Zymo sample, counts of 5mC motifs are listed, along with the number of methylation loci not attributable to any of the listed motifs."
 shortname <- "tab:bisulf"
 where <- "[!hb]"
@@ -80,7 +80,7 @@ cat(figstr)
 <<results = 'asis', eval = TRUE>>=
 what <- "table"
 figname <- "meancov"
-title <- "Zymo mean coverage."
+title <- "Zymo mean coverage"
 desc <- "Mean coverage per sequence in the ZymoBIOMICS sample."
 shortname <- "tab:meancov"
 where <- "[!hb]"
@@ -98,7 +98,7 @@ cat(figstr)
 <<results = 'asis', eval = TRUE>>=
 what <- "figure"
 figname <- "covhists"
-title <- "Zymo mean coverage."
+title <- "Zymo coverage per sequence"
 desc <- "Coverage distributions per sequence in the ZymoBIOMICS sample."
 shortname <- "fig:covhists"
 where <- "[!hb]"
@@ -113,12 +113,12 @@ figstr <- paste0('\\begin{', what ,'}', where ,'
 cat(figstr)
 @
 
-For each chromosome and plasmid, we constructed a methylation signature consisting of the average percent methylation at each of the four motifs in the barcode {\bf Figure \ref{fig:controls}a}. The percent methylation at each locus is calculated as the number of methylated calls out of the total number of calls made. Euclidean distance between these signatures was then used as a measure of similarity {\bf Figure \ref{fig:controls}b}. Notably, the methylation signatures closest to each of the plasmids correspond to the bacterial chromosomes of the species harboring each plasmid respectively. As expected, the distance between L. monocytogenes and P. aeruginosa are among the smallest between chromosomes because no motif included in the barcode differentiates between them. However, E. faecalis also groups closely with L. monocytogenes and P. aeruginosa. The only motif included in the barcode which separates E. faecalis from L. monocytogenes and P. aeruginosa is a 6mA motif (CTKV6mAG), and upon examination of the methylation signatures themselves, it becomes clear that this motif does not offer as much discriminatory power as the others {\bf Figure \ref{fig:controls}a}. In fact, removing this motif from the barcode does not appreciably change the distances between the chromosomes {\bf Figure \ref{fig:zheatmaps}a}.
+For each chromosome and plasmid, we constructed a methylation signature consisting of the average percent methylation at each of the four motifs in the barcode {\bf Figure \ref{fig:controls}a}. The percent methylation at each locus is calculated as the number of methylated calls out of the total number of calls made. Euclidean distance between these signatures was then used as a measure of similarity {\bf Figure \ref{fig:controls}b}. Notably, the methylation signatures closest to each of the plasmids correspond to the bacterial chromosomes of the species harboring each plasmid respectively. As expected, the distance between \textit{L. monocytogenes} and \textit{P. aeruginosa} are among the smallest between chromosomes because no motif included in the barcode differentiates between them. However, \textit{E. faecalis} also groups closely with \textit{L. monocytogenes} and \textit{P. aeruginosa}. The only motif included in the barcode which separates \textit{E. faecalis} from \textit{L. monocytogenes} and \textit{P. aeruginosa} is a 6mA motif (CTKV6mAG), and upon examination of the methylation signatures themselves, it becomes clear that this motif does not offer as much discriminatory power as the others {\bf Figure \ref{fig:controls}a}. In fact, removing this motif from the barcode does not appreciably change the distances between the chromosomes {\bf Figure \ref{fig:zheatmaps}a}.
 
 <<results = 'asis', eval = TRUE>>=
 what <- "figure"
 figname <- "controls"
-title <- "Methylation binning in synthetic communities."
+title <- "Methylation binning in synthetic communities"
 desc <- "{\\bf (A)} Percent methylation at each motif for each sequence in the Zymo community. {\\bf (B)} Methylation distance between sequences in the Zymo community based on the motifs in {\\bf (A)}. {\\bf (C)} Methylation distance between RN4220, Dh5a, their associated plasmids, and the synthetic mixture of their plasmids, when percent methylation is calculated using normalized coverage."
 shortname <- "fig:controls"
 where <- "[!hb]"
@@ -137,7 +137,7 @@ cat(figstr)
 <<results = 'asis', eval = TRUE>>=
 what <- "figure"
 figname <- "zheatmaps"
-title <- "Methylation binning in Zymo community."
+title <- "Methylation binning in Zymo community"
 desc <- "{\\bf (A)} Methylation distance between sequences in the Zymo community, based on the motifs GATC, CAGAG, CCWGG where GATC represents both G6mATC and GAT5mC. {\\bf (B)} Methylation distance between sequences in the Zymo community, based on only 5mC motifs GATC, CCWGG, GCCGGC, CMTCGAKG."
 shortname <- "fig:zheatmaps"
 where <- "[!hb]"
@@ -152,16 +152,16 @@ figstr <- paste0('\\begin{', what ,'}', where ,'
 cat(figstr)
 @
 
-To further explore, we implemented a barcode composed of only the relevant 5mC motifs {\bf Table \ref{tab:motifsummary}}. Due to the lack of CMT(5mC)GAKG occurrences on the S. aureus plasmid, we only classified the E. coli plasmid using this all-5mC barcode {\bf Figure \ref{fig:zheatmaps}b}. However, because the newly included CMT5mCGAKG is unique to P. aeruginosa, it is differentiable from L. monocytogenes and E. faecalis using this barcode. As expected, since the L. monocytogenes and E. faecalis strains in this sample do not exhibit any Type II 5mC methylation, these chromosomes remain close together in methylation space.
+To further explore, we implemented a barcode composed of only the relevant 5mC motifs {\bf Table \ref{tab:motifsummary}}. Due to the lack of CMT(5mC)GAKG occurrences on the \textit{S. aureus} plasmid, we only classified the \textit{E.coli} plasmid using this all-5mC barcode {\bf Figure \ref{fig:zheatmaps}b}. However, because the newly included CMT5mCGAKG is unique to \textit{P. aeruginosa}, it is differentiable from \textit{L. monocytogenes} and \textit{E. faecalis} using this barcode. As expected, since the \textit{L. monocytogenes} and \textit{E. faecalis} strains in this sample do not exhibit any Type II 5mC methylation, these chromosomes remain close together in methylation space.
 
-Methylation distance also can be calculated with tolerance for missing methylation values, where distances with missing values are scaled to as to be comparable to complete distances. By including all 5mC motifs in the barcode and forcing the classification of the S. aureus plasmid, P. aeruginosa again becomes differentiable from L. monocytogenes and E. faecalis {\bf Figure \ref{fig:zheatmaps}c}. However, the distance between the S. aureus plasmid and chromosome also increases. While the shortest distances observed are still attributable to sequences with identical methylation, these distances are not as tight.
+Methylation distance also can be calculated with tolerance for missing methylation values, where distances with missing values are scaled to as to be comparable to complete distances. By including all 5mC motifs in the barcode and forcing the classification of the \textit{S. aureus} plasmid, \textit{P. aeruginosa} again becomes differentiable from \textit{L. monocytogenes} and \textit{E. faecalis} {\bf Figure \ref{fig:zheatmaps}c}. However, the distance between the \textit{S. aureus} plasmid and chromosome also increases. While the shortest distances observed are still attributable to sequences with identical methylation, these distances are not as tight.
 
 Notably, the methylation distances between the species in this community standard do not closely reflect their taxonomic lineages {\bf Figure \ref{fig:taxonomy}}. This indicates that methylome diversity is not determined by phylogeny, and suggests that methylation can potentially be used to distinguish between even closely related organisms.
 
 <<results = 'asis', eval = TRUE>>=
 what <- "figure"
 figname <- "taxonomy"
-title <- "Zymo taxonomy."
+title <- "Zymo taxonomy"
 desc <- "Simplified taxonomic lineages of the Zymo microbial community bacteria."
 shortname <- "fig:taxonomy"
 where <- "[!hb]"
@@ -179,13 +179,13 @@ cat(figstr)
 \subsection{Two-bacteria System}
 \label{sec:byard}
 
-We then tested the efficacy of methylation signatures for accurately linking a single plasmid to different bacterial hosts. To do this, we used two bacteria, E. coli (strain DH5α) and S. aureus (strain RN4220), each containing an identical 10kb plasmid (pRW62). This plasmid contains an origin of replication for E. coli and a separate origin of replication for S. aureus so that it is replicated in both species. Both were cultured separately and sequenced separately on individual Flongle runs {\bf Figure \ref{tab:yields}}. With bisulfite sequencing data, we observed only two methylated loci in the entire genome of this strain of S. aureus, neither of which are in a known 5mC methylation context. In this strain of E. coli, all 5mC methylated loci occur in a C5mCWGG context.
+We then tested the efficacy of methylation signatures for accurately linking a single plasmid to different bacterial hosts. To do this, we used two bacteria, \textit{E.coli} (strain DH5α) and \textit{S. aureus} (strain RN4220), each containing an identical 10kb plasmid (pRW62). This plasmid contains an origin of replication for \textit{E.coli} and a separate origin of replication for \textit{S. aureus} so that it is replicated in both species. Both were cultured separately and sequenced separately on individual Flongle runs {\bf Figure \ref{tab:yields}}. With bisulfite sequencing data, we observed only two methylated loci in the entire genome of this strain of \textit{S. aureus}, neither of which are in a known 5mC methylation context. In this strain of \textit{E.coli}, all 5mC methylated loci occur in a C5mCWGG context.
 
 
 <<results = 'asis', eval = TRUE>>=
 what <- "table"
 figname <- "yields"
-title <- " Summary statistics of sequencing runs."
+title <- " Summary statistics of sequencing runs"
 desc <- "Yield, number of reads, and mean read length for each sequencing run performed."
 shortname <- "tab:yields"
 where <- "[!hb]"
@@ -205,7 +205,7 @@ Given the results of bisulfite analysis, we selected frequently recorded motifs 
 <<results = 'asis', eval = TRUE>>=
 what <- "figure"
 figname <- "bheatmaps"
-title <- "Methylation distance between RN4220 and Dh5a."
+title <- "Methylation distance between RN4220 and Dh5a"
 desc <- "{\\bf (A)} Methylation distance between RN4220 and Dh5a and plasmids with no normalization. The mixed plasmid comprises all plasmid reads. {\\bf (A)} Methylation distance between RN4220 and Dh5a where reads have been randomly downsample such that chromosomes have the same average coverage and individual plasmids have the same average coverage. The mixed plasmid contains the downsampled plasmid reads of both strains."
 shortname <- "fig:bheatmaps"
 where <- "[!hb]"
@@ -220,13 +220,13 @@ figstr <- paste0('\\begin{', what ,'}', where ,'
 cat(figstr)
 @
 
-Using methylation signatures defined by these five motifs, we are able to distinguish the plasmid’s presence in E. coli from its presence in S. aureus {\bf Figure \ref{fig:controls}c}. However, when plasmid reads from both runs are mixed, combined and analyzed , the methylation signature places the mixed plasmid much closer to the E. coli signature than the S. aureus signature {\bf Figure \ref{fig:bheatmaps}a}. This is partially because this plasmid has a much higher copy number in the E. coli data {\bf Figure \ref{tab:runcov}}. When the E. coli plasmid reads are downsampled from 6000X coverage to 440X coverage to match the sequence coverage of the S. aureus reads before in silico mixing, the mixed plasmid moves away from the E. coli signature {\bf Figure \ref{fig:bheatmaps}b}. Much of the remaining bias is accounted for by the high uncertainty of methylation calls at unmethylated loci {\bf Figure \ref{fig:modprobsfig}}. Methylation callers such as Megalodon or nanopolish compute a probability that a base of a sequencing read is methylated \citep{Simpson2017-wb}. This probability is then thresholded to call bases as either methylated, unmethylated, or uncertain. Though 5-methylcytosine in a CG context gives robust calls of either methylated or unmethylated \citep{Simpson2017-wb}, non-CG 5-methylcytosine models are less robust and 6-methyladenine gives a smaller electrical signal shift, leading to more uncertain calls. Methylated motifs still present a high probability of methylation, but unmethylated motifs are less clear {\bf Figure \ref{fig:modprobsfig}, Table \ref{tab:modprobs}}. Unmethylated loci are less likely to contribute any methylation calls, suggesting that most calls made on the mixed plasmid originated from the E. coli data, the only organism with any confirmed methylation. To counteract this, we calculated methylation percentage as the ratio of methylated calls to the total coverage, instead of total methylation calls, at each locus. This way, the unmethylated calls do not play a role in determining the methylation signatures. With this adjustment, the mixed plasmid falls roughly equidistant between the E. coli and S. aureus signatures {\bf Figure \ref{fig:controls}c}. As methylation callers improve, we expect that this correction may not be necessary, because the values from methylation vs coverage and methylation vs called will converge.
+Using methylation signatures defined by these five motifs, we are able to distinguish the plasmid’s presence in \textit{E.coli} from its presence in \textit{S. aureus} {\bf Figure \ref{fig:controls}c}. However, when plasmid reads from both runs are mixed, combined and analyzed , the methylation signature places the mixed plasmid much closer to the \textit{E.coli} signature than the \textit{S. aureus} signature {\bf Figure \ref{fig:bheatmaps}a}. This is partially because this plasmid has a much higher copy number in the \textit{E.coli} data {\bf Figure \ref{tab:runcov}}. When the \textit{E.coli} plasmid reads are downsampled from 6000X coverage to 440X coverage to match the sequence coverage of the \textit{S. aureus} reads before in silico mixing, the mixed plasmid moves away from the \textit{E.coli} signature {\bf Figure \ref{fig:bheatmaps}b}. Much of the remaining bias is accounted for by the high uncertainty of methylation calls at unmethylated loci {\bf Figure \ref{fig:modprobsfig}}. Methylation callers such as Megalodon or nanopolish compute a probability that a base of a sequencing read is methylated \citep{Simpson2017-wb}. This probability is then thresholded to call bases as either methylated, unmethylated, or uncertain. Though 5-methylcytosine in a CG context gives robust calls of either methylated or unmethylated \citep{Simpson2017-wb}, non-CG 5-methylcytosine models are less robust and 6-methyladenine gives a smaller electrical signal shift, leading to more uncertain calls. Methylated motifs still present a high probability of methylation, but unmethylated motifs are less clear {\bf Figure \ref{fig:modprobsfig}, Table \ref{tab:modprobs}}. Unmethylated loci are less likely to contribute any methylation calls, suggesting that most calls made on the mixed plasmid originated from the \textit{E.coli} data, the only organism with any confirmed methylation. To counteract this, we calculated methylation percentage as the ratio of methylated calls to the total coverage, instead of total methylation calls, at each locus. This way, the unmethylated calls do not play a role in determining the methylation signatures. With this adjustment, the mixed plasmid falls roughly equidistant between the \textit{E.coli} and \textit{S. aureus} signatures {\bf Figure \ref{fig:controls}c}. As methylation callers improve, we expect that this correction may not be necessary, because the values from methylation vs coverage and methylation vs called will converge.
 
 <<results = 'asis', eval = TRUE>>=
 what <- "table"
 figname <- "runcov"
 title <- "Two-bacteria system coverage"
-desc <- "Mean coverage per sequence for each of the two sequenced cultures."
+desc <- "Mean coverage per sequence for each of the two sequenced cultures"
 shortname <- "tab:runcov"
 where <- "[!hb]"
 
@@ -264,7 +264,7 @@ cat(figstr)
 what <- "table"
 figname <- "modprobs"
 title <- "Unclassified loci"
-desc <- "Fraction of 'unclassified' methylation calls made at select GATC loci in S. aureus, E. coli and plasmid PRW62 in each."
+desc <- "Fraction of 'unclassified' methylation calls made at select GATC loci in \textit{S. aureus}, \textit{E.coli} and plasmid PRW62 in each"
 shortname <- "tab:modprobs"
 where <- "[!hb]"
 
@@ -343,7 +343,7 @@ figstr <- paste0('\\begin{', what ,'}', where ,'
 cat(figstr)
 @
 
-To assess the performance of this methylation based clustering compared to Hi-C, we show the ‘contamination’ and ‘completeness’ of clusters as defined by different height thresholds on the tree, where height corresponds to methylation-based Euclidean distance. Here, ‘contamination’ is the percentage of contigs not contained in a cluster with only other contigs of the same Hi-C bin, while ‘completeness’ is the percentage of contigs contained in the same cluster as the majority of contigs of its bin {\bf Figure \ref{fig:mdrfig}a}. Similar to a receiver operating curve (ROC) for binary classifiers, an ideal clustering would have either 100\% 1-contamination or 100\% completeness at all height thresholds, resulting in an AUC of 1. Unlike an ROC, a random classifier would not be represented by a diagonal line, but a decay-like function, according to simulated random clustering.
+To assess the performance of this methylation based clustering compared to Hi-C, we show the ‘contamination’ and ‘completeness’ of clusters as defined by different height thresholds on the tree, where height corresponds to methylation-based Euclidean distance. Here, ‘contamination’ is the percentage of contigs not contained in a cluster with only other contigs of the same Hi-C bin, while ‘completeness’ is the percentage of contigs contained in the same cluster as the majority of contigs of its bin {\bf Figure \ref{fig:mdrfig}a}. Similar to a receiver operating curve (ROC) for binary classifiers, an ideal clustering would have either 0\% contamination or 100\% completeness at all height thresholds, resulting in an AUC of 1. Unlike an ROC, a random classifier would not be represented by a diagonal line, but a decay-like function, according to simulated random clustering.
 
 
 <<results = 'asis', eval = TRUE>>=
@@ -367,7 +367,7 @@ cat(figstr)
 
 Moving to mobile elements, we found that contigs identified as plasmids belong to the same methylation distance clusters as Hi-C bins.  For all eight plasmid contigs with full barcode information,  the nearest contigs come from the same bin {\bf Figure \ref{fig:mdrfig}b,c}. While these pairwise distance calculations can be done using a subset of motifs in the barcode if a plasmid contig does not contain all the motifs, the number of nearby contigs belonging to the same bin decreases as motifs are removed {\bf Figure \ref{fig:mdrfig}c}.
 
-Using PlasmidFinder, we identified which nanopore contigs were likely to be plasmids, and using Kraken2, we classified them taxonomically. Of the nanopore contigs identified as plasmids, three were classified as K. pneumoniae sequences. These were an IncFIB(pQil) plasmid, an IncM2 plasmid, and a plasmid identified as both IncX3 and ColKP3. However, the IncM2 and the IncX3/ColKP3 plasmids align to a Hi-C bin that is predominantly composed of E. coli sequences (bin\_3), suggesting that E. coli was the host organism for these plasmids in the original sample. Methylation distance corroborates this, as the nearest contigs to these two plasmid contigs are also both classified as E. coli sequences. However, a ColKP3 sequence was detected in the Illumina contigs making up the K. pneumoniae Hi-C bin\_5. While this could indicate a mis-assembly of the IncX3/ColKP3 nanopore contig, coverage profiles across each plasmid contig did not exhibit any stepwise or aberrant changes. Furthermore, the flye assembler indicates that the IncX3/ColKP3 contig is circular, suggesting that mis-assembly is unlikely, though not impossible. Without using orthogonal information from either Hi-C or methylation, correctly identifying the host of these plasmids as E. coli would not have been possible.
+Using PlasmidFinder, we identified which nanopore contigs were likely to be plasmids, and using Kraken2, we classified them taxonomically. Of the nanopore contigs identified as plasmids, three were classified as \textit{K. pneumoniae} sequences. These were an IncFIB(pQil) plasmid, an IncM2 plasmid, and a plasmid identified as both IncX3 and ColKP3. However, the IncM2 and the IncX3/ColKP3 plasmids align to a Hi-C bin that is predominantly composed of \textit{E.coli} sequences (bin\_3), suggesting that \textit{E.coli} was the host organism for these plasmids in the original sample. Methylation distance corroborates this, as the nearest contigs to these two plasmid contigs are also both classified as \textit{E.coli} sequences. However, a ColKP3 sequence was detected in the Illumina contigs making up the \textit{K. pneumoniae} Hi-C bin\_5. While this could indicate a mis-assembly of the IncX3/ColKP3 nanopore contig, coverage profiles across each plasmid contig did not exhibit any stepwise or aberrant changes. Furthermore, the flye assembler indicates that the IncX3/ColKP3 contig is circular, suggesting that mis-assembly is unlikely, though not impossible. Without using orthogonal information from either Hi-C or methylation, correctly identifying the host of these plasmids as \textit{E.coli} would not have been possible.
 
 \section{Discussion}
 \label{sec:discuss}
@@ -376,7 +376,7 @@ With the drop in sequencing costs and the development of new computational tools
 
 Currently, non-5mCG methylation calling on the ONT platform does not consistently yield calls of the same confidence or quality as CG methylation calls. Because of this, the methylation status at many of these low confidence loci are left undetermined. We have shown that aggregation of methylation calls, both across reads and along contigs, can mitigate this issue, so that contig bin and plasmid assignments can be accurately made. This is aided by the long contigs generated from long-read metagenome assembly - longer contigs have a better chance of containing a given methylation motif. However, as methylation calling continues to improve on long-read sequencing platforms discriminatory power will also improve.
 
-Additionally, the lack of specific methylation information presents a challenge, as constructing methylation signatures requires some prior knowledge of the motifs likely to give high differentiating power. With a highly comprehensive bacterial methylation database, motifs can be chosen based on the species and strain composition of the sample as elucidated by sequence information. While REBASE is an excellent resource to start with \citep{Roberts2003-ss}, it lacks some 5mC motifs of common bacterial strains \citep{Tourancheau2021-hv}. For example, the TC(5mC)GGA motif identified in the E. coli strain (Castellani and Chalmers 1919) of the Zymo community was not listed with any E. coli strain in REBASE, and the CMT(5mC)GAKG motif found in the Zymo P. aeruginosa (PRD-10) was not listed at all in the database. However, recent work on motif discovery has been promising \citep{Tourancheau2021-hv, Beaulaurier2018-mu}, and will continue to improve knowledge of bacterial methylomes in combination with more widespread bacterial bisulfite sequencing \citep{Oliveira_Pedro_H2021-rs}. These insights will better inform motif selection and significantly improve binning efforts, as well as further the field of bacterial epigenetics generally.
+Additionally, the lack of specific methylation information presents a challenge, as constructing methylation signatures requires some prior knowledge of the motifs likely to give high differentiating power. With a highly comprehensive bacterial methylation database, motifs can be chosen based on the species and strain composition of the sample as elucidated by sequence information. While REBASE is an excellent resource to start with \citep{Roberts2003-ss}, it lacks some 5mC motifs of common bacterial strains \citep{Tourancheau2021-hv}. For example, the TC(5mC)GGA motif identified in the \textit{E.coli} strain (Castellani and Chalmers 1919) of the Zymo community was not listed with any \textit{E.coli} strain in REBASE, and the CMT(5mC)GAKG motif found in the Zymo \textit{\textit{P. aeruginosa}} (PRD-10) was not listed at all in the database. However, recent work on motif discovery has been promising \citep{Tourancheau2021-hv, Beaulaurier2018-mu}, and will continue to improve knowledge of bacterial methylomes in combination with more widespread bacterial bisulfite sequencing \citep{Oliveira_Pedro_H2021-rs}. These insights will better inform motif selection and significantly improve binning efforts, as well as further the field of bacterial epigenetics generally.
 
 Lastly, the applicability of this method is limited because of its inability to identify plasmids in multiple hosts. However, it does not escape our notice that given the long-read nature of nanopore sequencing, it may be possible to aggregate methylation signals along whole reads, and classify them as has been done with PacBio data \citep{Beaulaurier2018-mu}. Again, this will become more feasible as methylation calling on the platform continues to improve.
 
@@ -389,9 +389,9 @@ Despite these current limitations, we find that it is possible to bin some singl
 \subsection{Strain culture}
 \label{sec:methods}
 
-Staphylococcus aureus RN4220 cells were grown at 37°C in Bacto Brain-Heart infusion (BHI) broth with shaking at 220 RPM. Antibiotics were used at the following concentrations for strain construction and plasmid maintenance in S. aureus: spectinomycin, 250 µg/mL. Escherichia coli Dh5a cells were grown at 37°C, unless otherwise indicated, in RPI Luria Broth (LB) with spectinomycin at 50 µg/mL for plasmid maintenance. Strains were constructed, stored in 10\% DMSO in -80°C, and restruck on BHI agar (S. aureus) or LB agar (E. coli) with spectinomycin if needed.
+Staphylococcus aureus RN4220 cells were grown at 37°C in Bacto Brain-Heart infusion (BHI) broth with shaking at 220 RPM. Antibiotics were used at the following concentrations for strain construction and plasmid maintenance in \textit{S. aureus}: spectinomycin, 250 µg/mL. \textit{Escherichia coli} Dh5a cells were grown at 37°C, unless otherwise indicated, in RPI Luria Broth (LB) with spectinomycin at 50 µg/mL for plasmid maintenance. Strains were constructed, stored in 10\% DMSO in -80°C, and restruck on BHI agar (\textit{S. aureus}) or LB agar (\textit{E.coli}) with spectinomycin if needed.
 
-pRW62 was constructed by Gibson assembly using the pLZ12 backbone (primers JW713/714) and from a construct (pDB184) containing the Streptococcus pyogenes CRISPR-Cas locus from strain SF370 (JW715/754) with a single spacer. Plasmids were transformed into chemically competent Dh5a with heat shock or electrocompetent RN4220 with electroporation, then plated on antibiotic for selection.e.
+pRW62 was constructed by Gibson assembly using the pLZ12 backbone (primers JW713/714) and from a construct (pDB184) containing the \textit{Streptococcus pyogenes} CRISPR-Cas locus from strain SF370 (JW715/754) with a single spacer. Plasmids were transformed into chemically competent Dh5a with heat shock or electrocompetent RN4220 with electroporation, then plated on antibiotic for selection.e.
 
 \subsection{DNA extraction and sequencing}
 \label{sec:methods}
@@ -416,7 +416,7 @@ Human reads were removed from the Hi-C data using BMTagger (v3.101) \citep{Rotmi
 \subsection{Methylation calling}
 \label{sec:methods}
 
-Methylation was called from nanopore data with the ONT package Megalodon (v2.3.1, https://github.com/nanoporetech/megalodon), using an all-context 5mC and 6mA model (res\_dna\_r941\_min\_modbases-all-context\_v001) available in Rerio (https://github.com/nanoporetech/rerio). For strains 3294 and 3689, the previously published E. coli NEB 5-alpha genome (accession: CP017100.1) and the S. aureus representative genome (accession: NC\_007795.1) were used as the reference genomes for anchoring methylation calls. Genomes of the organisms included in the documentation were used as the references for the ZymoBIOMICS HMW DNA Standard. The polished metagenomic assembly (see Assembly above) was used as the reference for the clinical stool sample.
+Methylation was called from nanopore data with the ONT package Megalodon (v2.3.1, https://github.com/nanoporetech/megalodon), using an all-context 5mC and 6mA model (res\_dna\_r941\_min\_modbases-all-context\_v001) available in Rerio (https://github.com/nanoporetech/rerio). For strains 3294 and 3689, the previously published \textit{E.coli} NEB 5-alpha genome (accession: CP017100.1) and the \textit{S. aureus} representative genome (accession: NC\_007795.1) were used as the reference genomes for anchoring methylation calls. Genomes of the organisms included in the documentation were used as the references for the ZymoBIOMICS HMW DNA Standard. The polished metagenomic assembly (see Assembly above) was used as the reference for the clinical stool sample.
 
 For each read, bases with >80\% methylation probability were identified as methylated, while bases with <20\% methylation probability were identified as unmethylated, as per the default settings of the tool. The percent methylation at each genomic locus was determined by dividing the number of reads methylated at that locus by the total number of reads called at that locus. Reads with indeterminate methylation calls at the locus were not considered in this calculation.
 
@@ -428,9 +428,9 @@ ONT reads were aligned to their respective reference genomes using minimap2 with
 \subsection{Bisulfite analysis}
 \label{sec:methods}
 
-Whole genome bisulfite sequencing (WGBS) data for each of the 7 strains included in the Zymo community standard was obtained from SRA (BioProject PRJNA477598). Bismark (v0.23.0) \citep{Krueger2011-cu} was used to align the WGBS data for each strain to the ZymoBIOMICS reference genomes (see Methylation calling above). Genomic loci with >90\% methylation frequency were considered methylated.Methylated loci exactly matching GAT5mC or C5mCWGG were counted and tabulated {\bf Table \ref{tab:bisulf}}. Methylated loci not matching GAT5mC or C5mCWGG were visually inspected, and an overrepresentation of TC5mCGGA and GC5mCGGC methylation context was observed in E. coli, while an overrepresentation of CMT(5mC)GAKG was observed in P. aeruginosa. These contexts were then also counted and tabulated. The remaining methylated loci were then counted and tabulated as ‘unknown’ methylation contexts.
+Whole genome bisulfite sequencing (WGBS) data for each of the 7 strains included in the Zymo community standard was obtained from SRA (BioProject PRJNA477598). Bismark (v0.23.0) \citep{Krueger2011-cu} was used to align the WGBS data for each strain to the ZymoBIOMICS reference genomes (see Methylation calling above). Genomic loci with >90\% methylation frequency were considered methylated. Methylated loci exactly matching GAT5mC or C5mCWGG were counted and tabulated {\bf Table \ref{tab:bisulf}}. Methylated loci not matching GAT5mC or C5mCWGG were visually inspected, and an overrepresentation of TC5mCGGA and GC5mCGGC methylation context was observed in \textit{E.coli}, while an overrepresentation of CMT(5mC)GAKG was observed in \textit{P. aeruginosa}. These contexts were then also counted and tabulated. The remaining methylated loci were then counted and tabulated as ‘unknown’ methylation contexts.
 
-Likewise in the bisulfite data of the two-bacteria system, Bismark was used to align the WGBS reads to the reference genomes, and only genomic loci with >90\% methylation frequency were considered methylated. All methylated loci on the E. coli genome were determined to exactly match the C5mCWGG context. The two methylated loci found on the S. aureus genome did not match C5mCWGG and were not further contextualized.
+Likewise in the bisulfite data of the two-bacteria system, Bismark was used to align the WGBS reads to the reference genomes, and only genomic loci with >90\% methylation frequency were considered methylated. All methylated loci on the \textit{E.coli} genome were determined to exactly match the C5mCWGG context. The two methylated loci found on the \textit{S. aureus} genome did not match C5mCWGG and were not further contextualized.
 
 \subsection{Data Availability}
 \label{sec:methods}
